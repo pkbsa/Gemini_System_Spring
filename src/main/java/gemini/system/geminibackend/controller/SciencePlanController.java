@@ -1,18 +1,16 @@
 package gemini.system.geminibackend.controller;
 
-import edu.gemini.app.ocs.OCS;
 import edu.gemini.app.ocs.model.*;
-
+import gemini.system.geminibackend.model.*;
 import gemini.system.geminibackend.model.Observer;
+import gemini.system.geminibackend.repository.UserRepository;
+
+
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import gemini.system.geminibackend.repository.UserRepository;
-
-import gemini.system.geminibackend.model.*;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

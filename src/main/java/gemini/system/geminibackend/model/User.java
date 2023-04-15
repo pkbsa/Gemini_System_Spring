@@ -1,14 +1,10 @@
 package gemini.system.geminibackend.model;
 
 import edu.gemini.app.ocs.OCS;
-import edu.gemini.app.ocs.model.AstronomicalData;
 import edu.gemini.app.ocs.model.SciencePlan;
+
 import jakarta.persistence.*;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.util.ArrayList;
 
 @Entity

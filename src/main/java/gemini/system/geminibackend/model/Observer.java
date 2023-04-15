@@ -1,7 +1,6 @@
 package gemini.system.geminibackend.model;
 
 import edu.gemini.app.ocs.model.AstronomicalData;
-import edu.gemini.app.ocs.model.SciencePlan;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
