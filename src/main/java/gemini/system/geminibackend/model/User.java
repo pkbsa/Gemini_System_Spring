@@ -106,56 +106,7 @@ public abstract class User {
         }
         return null;
     }
-    public ArrayList<BufferedImage> setDummyData(){
-        ocs.updateSciencePlanStatus(2, SciencePlan.STATUS.COMPLETE);
-        // Case 6: Execute a command line
-        System.out.println("\nCase 6: Execute a Gemini command line's command");
-        // Execute the command to get the Gemini system version
-        System.out.println(ocs.executeCommand("GetVersion"));
-        // Execute the command to get the status of the Gemini system
-        System.out.println(ocs.executeCommand("GetStatus"));
-        // Execute the command to run the system test
-        System.out.println(ocs.executeCommand("RunTest"));
-        // Send command to the virtual telescope
-        System.out.println(ocs.executeCommand("START"));
-        System.out.println(ocs.executeCommand("UP"));
-        System.out.println(ocs.executeCommand("UP"));
-        System.out.println(ocs.executeCommand("LEFT"));
-        System.out.println(ocs.executeCommand("LEFT"));
-        System.out.println(ocs.executeCommand("FOCUS"));
-        System.out.println(ocs.executeCommand("TAKE_PHOTO"));
-        System.out.println(ocs.executeCommand("STOP"));
-        // Case 7: Install and remove the configurations
-        System.out.println("\nCase 7: Install and remove the configurations");
-        System.out.println("INSTALLED CONFIGURATIONS\n" + ocs.getConfigurations());
-        boolean success = ocs.addConfiguration("/home/drive/gemini/configuration1.conf");
-        System.out.println("Adding status: " + success);
-        System.out.println("INSTALLED CONFIGURATIONS\n" + ocs.getConfigurations());
-        success = ocs.removeConfiguration(1);
-        System.out.println("Removing status: " + success);
-        System.out.println("INSTALLED CONFIGURATIONS\n" + ocs.getConfigurations());
-
-        // Case 9: Access live view of telescope
-        System.out.println("\nCase 9: Access live view of telescope");
-        try {
-            System.out.println(ocs.accessTelescopeLiveView());
-        } catch (IOException ie) {
-            ie.printStackTrace();
-        }
-        // Case 9: Test science plan
-        System.out.println("\nCase 9: Test science plan");
-        System.out.println(ocs.testSciencePlan(ocs.getSciencePlanByNo(2)));
-        System.out.println(ocs.getAllSciencePlans());
-
-        System.out.println("\nCase 10: Get the astronomical data from complete science plan");
-        System.out.println(ocs.getSciencePlanByNo(2));
-        AstronomicalData astroData = null;
-        try {
-            astroData = ocs.getAstronomicalData(ocs.getSciencePlanByNo(2));
-            return astroData.getAllImages();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+    public boolean updateSciencePlanStatus(int id, String status){
+        return ocs.updateSciencePlanStatus(id, SciencePlan.STATUS.valueOf(status));
     }
 }

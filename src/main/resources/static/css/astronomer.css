@@ -49,6 +49,7 @@ img.logo{
     margin-top: 15vmin;
     border: 1px solid rgba(0, 0, 0, 0.822);
     padding: 3vmin;
+    overflow: scroll;
 }
 .main-container h2{
     font-weight: 400;

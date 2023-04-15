@@ -61,6 +61,12 @@ public class UserController {
     }
 
     @CrossOrigin
+    @GetMapping("/admin")
+    public String admin(){
+        return "admin"  ;
+    }
+
+    @CrossOrigin
     @GetMapping("/users")
     public @ResponseBody Iterable<User> getAllUsers(){
         return userRepository.findAll();

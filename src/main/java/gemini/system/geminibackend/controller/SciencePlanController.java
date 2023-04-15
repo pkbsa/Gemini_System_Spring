@@ -98,21 +98,12 @@ public class SciencePlanController {
         }
         return encodedImages;
     }
-
-    @CrossOrigin
-    @GetMapping("setdummydata")
-    public @ResponseBody
-    String setDummyData(@RequestParam(value = "id") int id){
-        Observer observer = (Observer) userRepository.findById(id).get();
-        observer.setDummyData();
-        return "Dummy Data has been set successfully";
-    }
     @CrossOrigin
     @GetMapping("setsciplanstatus")
     public @ResponseBody
     String setSciencePlanStatus(@RequestParam(value = "id") int id,@RequestParam(value = "planNo") int planNo, @RequestParam(value = "status") String status){
-        Observer observer = (Observer) userRepository.findById(id).get();
-        Boolean result = observer.updateSciencePlanStatus(planNo, status);
+        User user = (User) userRepository.findById(id).get();
+        Boolean result = user.updateSciencePlanStatus(planNo, status);
         if (result) return "Science plan status has been updated";
         return "Error, Cannot Update Status";
 

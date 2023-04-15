@@ -35,14 +35,6 @@ public class Observer extends User {
 
         return null;
     }
-    public ArrayList<BufferedImage> setDummyData(){
-        ocs.updateSciencePlanStatus(2, SciencePlan.STATUS.COMPLETE);
-        return null;
-    }
-
-    public boolean updateSciencePlanStatus(int id, String status){
-        return ocs.updateSciencePlanStatus(id, SciencePlan.STATUS.valueOf(status));
-    }
 
 }
 

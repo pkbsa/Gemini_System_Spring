@@ -832,20 +832,7 @@ ready(function () {
    * Returns the user's IP address.
    */
 
-  async function getIP(url = "https://api.ipify.org?format=json") {
-    const response = await fetch(url, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
 
-    if (!response.ok) {
-      throw new Error(response.statusText);
-    }
-
-    return response.json();
-  }
 
   /*****************************************************************************
    * POSTs to the specified endpoint.
@@ -881,7 +868,7 @@ ready(function () {
 
   /****************************************************************************/
 
-  function handleSuccess(response) {
+  function handleSuccess() {
     const thankYou = progressForm.querySelector("#progress-form__thank-you");
 
     // Clear all HTML Nodes that are not the thank you panel
@@ -892,7 +879,7 @@ ready(function () {
     thankYou.removeAttribute("hidden");
 
     // Logging the response from httpbin for quick verification
-    console.log(response);
+
   }
 
   /****************************************************************************/
@@ -932,43 +919,13 @@ ready(function () {
         // Indicate that the submission is working
         disableSubmit();
 
-        // Prepare the data
-        const formData = new FormData(form),
-          formTime = new Date().getTime(),
-          formFields = [];
 
-        // Format the data entries
-        for (const [name, value] of formData) {
-          formFields.push({
-            name: name,
-            value: value,
-          });
-        }
 
-        // Get the user's IP address (for fun)
-        // Build the final data structure, including the IP
-        // POST the data and handle success or error
-        getIP()
-          .then((response) => {
-            return {
-              fields: formFields,
-              meta: {
-                submittedAt: formTime,
-                ipAddress: response.ip,
-              },
-            };
-          })
-          .then((data) => postData(API, data))
-          .then((response) => {
-            setTimeout(() => {
-              handleSuccess(response);
-            }, 5000); // An artificial delay to show the state of the submit button
-          })
-          .catch((error) => {
             setTimeout(() => {
               handleError(error);
             }, 5000); // An artificial delay to show the state of the submit button
-          });
+            handleSuccess();
+
       })
       .catch((invalidFields) => {
         // Show errors for any invalid fields
