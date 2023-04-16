@@ -53,25 +53,25 @@ Make sure to replace the values in the URLs enclosed in angle brackets with the 
 ## Quick Peek of the System
 
 - `/`<br>
-<img src=# alt="Homepage">
+<img src="/images/login.png" alt="Homepage">
 
 - `/register`<br>
-<img src=# alt="Registration page">
+<img src="/images/register.png" alt="Registration page">
 
 - `/astronomer`<br>
-<img src=# alt="Astronomer dashboard">
+<img src="/images/astronomer.png" alt="Astronomer dashboard">
 
 - `/create_scienceplan`<br>
-<img src=# alt="Create SciencePlan page">
+<img src="/images/create.png" alt="Create SciencePlan page">
 
 - `/test_scienceplan`<br>
-<img src=# alt="Test SciencePlan page">
+<img src="/images/test.png" alt="Test SciencePlan page">
 
 - `/observer`<br>
-<img src=# alt="Observer dashboard">
+<img src="/images/observer.png" alt="Observer dashboard">
 
 - `/collect_astronomical_data`<br>
-<img src=# alt="Collect astronomical data page">
+<img src="/images/collect.png" alt="Collect astronomical data page">
 
 - `/admin`<br>
-<img src=# alt="Admin">
+<img src="/images/admin.png" alt="Admin">
