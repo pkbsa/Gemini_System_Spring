@@ -76,7 +76,7 @@ public abstract class User {
         return userPermission;
     }
 
-    public void setUserOperationLevel(String userPermission) {
+    public void setUserPermission(String userPermission) {
         this.userPermission = userPermission;
     }
 

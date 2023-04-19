@@ -135,17 +135,9 @@ const buttonDiv = document.querySelector('.button-div');
 buttonDiv.addEventListener('click', (event) => {
   const clickedButton = event.target;
   const responseMessage = document.getElementById("content")
-  if (clickedButton.id === 'wrong') {
-    fetch(`http://localhost:8080/setsciplanstatus?id=${localStorage.getItem(
-      "userid"
-    )}&planNo=${document.getElementById("sciplanNo").value}&status=INVALIDATED`);
-    responseMessage.innerHTML = "The STATUS of the SciencePlan has been updated to INVALIDATED";
-  } else if (clickedButton.id === 'correct') {
-    fetch(`http://localhost:8080/setsciplanstatus?id=${localStorage.getItem(
-      "userid"
-    )}&planNo=${document.getElementById("sciplanNo").value}&status=VALIDATED`);
-    responseMessage.innerHTML = "The STATUS of the SciencePlan has been updated to VALIDATED";
-  }
+
+   responseMessage.innerHTML = "The Astronomical Data of the SciencePlan has been Collected";
+
   const response = document.querySelector('.response');
 response.style.display = 'flex';
 response.style.justifyContent = 'center';

@@ -73,7 +73,7 @@ public class SciencePlanController {
     @CrossOrigin
     @GetMapping("getastronomicaldata")
     public @ResponseBody
-    ArrayList<String> getAstronomicalData(@RequestParam(value = "id") int id, @RequestParam(value = "planNo") int planNo) {
+        ArrayList<String> getAstronomicalData(@RequestParam(value = "id") int id, @RequestParam(value = "planNo") int planNo) {
         Observer observer = (Observer) userRepository.findById(id).get();
 
         ArrayList<BufferedImage> images = observer.getAstronomicalData(planNo);
@@ -99,7 +99,7 @@ public class SciencePlanController {
     @CrossOrigin
     @GetMapping("setsciplanstatus")
     public @ResponseBody
-    String setSciencePlanStatus(@RequestParam(value = "id") int id,@RequestParam(value = "planNo") int planNo, @RequestParam(value = "status") String status){
+        String setSciencePlanStatus(@RequestParam(value = "id") int id,@RequestParam(value = "planNo") int planNo, @RequestParam(value = "status") String status){
         User user = (User) userRepository.findById(id).get();
         Boolean result = user.updateSciencePlanStatus(planNo, status);
         if (result) return "Science plan status has been updated";
